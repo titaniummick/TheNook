@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>THE NooK - Photo Gallery</title>
+    <meta http-equiv="content-type" content="text/html;charset-utf-8" />
+    <link href="css/images/thenook.ico" rel="icon" type="image/x-icon" />
+    <link rel="shortcut icon" href="css/images/thenook.ico" type="image/x-icon" />
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <meta name="google-translate-customization" content="f51a872436d54ad1-842cec76a3fc9b92-g8fd51fd61c538546-12"></meta>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="body">
+            <div class="body-top">
+            </div>
+            <div class="body-repeat">
+                <div class="header">
+                    <div id="google_translate_element" style="position: absolute; right: 40px; "></div>
+                    <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                      new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                    }
+                    </script>
+                    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                </div>
+                <div class="nav-bar">
+                    <div class="bar-top">
+                    </div>
+                    <div class="nav-bar-container">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="Accommodation.html">Accommodation</a></li>
+                            <li><a href="Location.html">Location</a></li>
+                            <li><a href="FacilitiesAndServices.html">Facilities & Service</a></li>
+                            <li><a href="SpecialOffers.html">Special offers</a></li>
+                            <li><a href="PhotoGallery.html" class="active">Photo Gallery</a></li>
+                            <li><a href="ShoppingAndActivities.html">Shopping & Activities</a></li>
+                            <li><a href="FAQ.html">FAQ</a></li>
+                            <li><a href="ContactUs.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="bar-bottom">
+                    </div>
+                </div>
+                <div class="photo-gallery">
+                    <h3>
+                        Photo Gallery</h3>
+                    <div class="img-thumnails">
+                        <ul id="thumbnailsList">
+                        </ul>
+                    </div>
+                    <div id="imgShowing" class="img-show">
+                        <img src="images/photo-gallery/01.png" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="bar-top">
+            </div>
+            <div class="footer-body">
+            </div>
+            <div class="bar-bottom">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            CreateThumbnails(8, 3);
+
+            $("#thumbnailsList").on("click", "li > .thumnails-item", function () {
+                var imgPath = "images/photo-gallery/" + $(this).attr("data-item-no") + ".png";
+                //                $("#imgShowing").empty().append("<img src='" + imgPath + "' alt='' />");
+                var $img = $("#imgShowing").find("img");
+                if ($img.length == 0) {
+                    $("#imgShowing").append("<img src='" + imgPath + "' alt='' />");
+                }
+                else {
+                    $img.attr("src", imgPath);
+                }
+            });
+
+        });
+        function CreateThumbnails(rowCount, columnCount) {
+            var defualtWidth = 60;
+            var defaultHeight = 60;
+            var template = "<li><div id='thumb_{id}' class='thumnails-item' data-item-no='{itemNo}'></div></li>";
+            var $thumbnails = $("#thumbnailsList");
+            var tempItem = "";
+            var itemId = 1;
+            for (var rowIndex = 0; rowIndex < rowCount; rowIndex++) {
+                for (var colIndex = 0; colIndex < columnCount; colIndex++) {
+                    tempItem = template.replace("{id}", itemId).replace("{itemNo}", (itemId < 10) ? "0" + itemId : itemId);
+                    $thumbnails.append(tempItem);
+                    $("#thumb_" + itemId).css({
+                        backgroundPosition: (colIndex * (-defualtWidth)) + "px " + (rowIndex * (-defaultHeight)) + "px"
+                    });
+                    itemId++;
+                }
+            }
+        }
+    </script>
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36467334-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- END Google Analytics -->
+</body>
+</html>

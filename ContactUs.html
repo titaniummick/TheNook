@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>THE NooK - Contact Us</title>
+    <meta http-equiv="content-type" content="text/html;charset-utf-8" />
+    <link href="css/images/thenook.ico" rel="icon" type="image/x-icon" />
+    <link rel="shortcut icon" href="css/images/thenook.ico" type="image/x-icon" />
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAUNmukPZdICwgsh_Pbf2H8LmERXx2Y6pI&sensor=false&&language=en">
+    </script>
+    <script type="text/javascript">
+
+        function loadMap() {
+            var ggMap = new Object(google.maps);
+            var theNookPosition = new ggMap.LatLng(13.7522, 100.5354);
+            var mapOptions = {
+                center: theNookPosition,
+                zoom: 15,
+                mapTypeId: ggMap.MapTypeId.ROADMAP,
+//                mapTypeControl: false,
+                //                mapTypeControlOptions: { style: ggMap.MapTypeControlStyle.DEFAULT },
+                zoomControlOptions: {
+                    style: ggMap.ZoomControlStyle.SMALL,
+                    position: ggMap.ControlPosition.LEFT_TOP
+                },
+                navigationControl: false,
+                streetViewControl: false
+            };
+            var map = new ggMap.Map(document.getElementById("map_canvas"), mapOptions);
+            var marker = new ggMap.Marker({
+                position: theNookPosition,
+                map: map,
+                title: "THE NooK",
+                icon: "css/images/marker.png"
+            });
+            ggMap.event.addListener(marker, 'click', function () {
+                map.setCenter(theNookPosition);
+                map.setZoom(15);
+            });
+        }
+    </script>
+    <meta name="google-translate-customization" content="f51a872436d54ad1-842cec76a3fc9b92-g8fd51fd61c538546-12"></meta>
+</head>
+<body onload="loadMap();">
+    <div id="wrapper">
+        <div class="body">
+            <div class="body-top">
+            </div>
+            <div class="body-repeat">
+                <div class="header">
+                    <div id="google_translate_element" style="position: absolute; right: 40px; "></div>
+                    <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                      new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                    }
+                    </script>
+                    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                </div>
+                <div class="nav-bar">
+                    <div class="bar-top">
+                    </div>
+                    <div class="nav-bar-container">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="Accommodation.html">Accommodation</a></li>
+                            <li><a href="Location.html">Location</a></li>
+                            <li><a href="FacilitiesAndServices.html">Facilities & Service</a></li>
+                            <li><a href="SpecialOffers.html">Special offers</a></li>
+                            <li><a href="PhotoGallery.html">Photo Gallery</a></li>
+                            <li><a href="ShoppingAndActivities.html">Shopping & Activities</a></li>
+                            <li><a href="FAQ.html">FAQ</a></li>
+                            <li><a href="ContactUs.html" class="active">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="bar-bottom">
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="images/the-nook.png" alt="" />
+                </div>
+                <div class="container">
+                    <div class="section-desert-storm">
+                        <div class="top">
+                        </div>
+                        <div class="repeat">
+                            <h4>
+                                Map</h4>
+                            <div id="map_canvas" style="width: 600px; height: 251px; margin: 0 auto;">
+                            </div>
+                        </div>
+                        <div class="bottom">
+                        </div>
+                    </div>
+                    <div class="section-link-water">
+                        <div class="top">
+                        </div>
+                        <div class="repeat">
+                            <h4>
+                                Contact :</h4>
+                            <p class="space">
+                                Address : 5 Petchaburi Road Soi 13 Ratchathewee Bangkok 10400 Thailand</p>
+                            <p class="space">
+                                Tel : +66(0)2-653-6919</p>
+                            <p class="space">
+                                FAX : +66(0)2-653-6920</p>
+                            <p class="space">
+                                Email : <a href="mailto:thenookbangkok@gmail.com">thenookbangkok@gmail.com</a>
+                            </p>
+                        </div>
+                        <div class="bottom">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="bar-top">
+            </div>
+            <div class="footer-body">
+            </div>
+            <div class="bar-bottom">
+            </div>
+        </div>
+    </div>
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36467334-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- END Google Analytics -->
+</body>
+</html>
